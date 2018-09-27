@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var naver : Button = findViewById(R.id.button)
+        var naver : Button = R.id.button as Button
         var tel = findViewById(R.id.button2) as Button
         var intent = findViewById(R.id.button3) as Button
         naver.setOnClickListener { // 네이버로 이동
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         intent.setOnClickListener { // 새 화면으로 전환
-            var newActivityIntent = Intent(this, NewActivity::class.java)
+            val newActivityIntent = Intent(this, NewActivity::class.java)
             startActivity(newActivityIntent)
             //Toast.makeText(applicationContext, "전화로 이동할 줄 알았지? 뻥이지롱~!", Toast.LENGTH_LONG).show()
         }
